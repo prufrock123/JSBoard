@@ -11,10 +11,12 @@ function app(){
         {url: "./bower_components/lodash/dist/lodash.min.js"},
         {url: "./bower_components/backbone/backbone.js"},
         {url: "./bower_components/foundation/js/foundation.js"},
+        {url: "./bower_components/foundation/js/foundation/foundation.offcanvas.js"},
         {url: "./dist/style.css"}
     ).then(function(){
         _.templateSettings.interpolate = /{([\s\S]+?)}/g;
         document.body.style.opacity = 1;
+        $(document).foundation();
         // start app?
     })
 
