@@ -2,7 +2,7 @@
 
 	window.app = window.app || {};
 
-	var JobListing = Backbone.model.extend({
+	var JobListing = Backbone.Model.extend({
 		validate: function(attrs){
 			if(!attrs.jobTitle){
 				return "JobListings must have a job title."
