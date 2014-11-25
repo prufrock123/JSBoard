@@ -7,7 +7,7 @@
 			"*default": "page1"
 		},
 		page1: function(){
-			this.JobListingsView
+			this.joblistingsview.render();
 		},
 		initialize: function(){
 			// app view
@@ -20,14 +20,15 @@
 				{ jobTitle: "Developer", type: "full-time" },
 				{ jobTitle: "Developer", type: "contract" },
 				{ jobTitle: "Developer", type: "full-time" },
-				{ jobTitle: "Developer", type: "full-time" },
+				{ jobTitle: "Developer", type: "full-time" }
 			]);
+			console.dir(this.joblistings)
 
 			// append a JobListingsView only ONCE
 			this.joblistingsview = new app.JobListingsView({
-				collction: this.joblistings
+				collection: this.joblistings
 			});
-			this.appview.$el.append(this.joblistingsview.el);
+			this.appview.$el.find(".container").append(this.joblistingsview.el);
 
 			Backbone.history.start();
 		}
