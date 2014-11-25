@@ -5570,3 +5570,13 @@ th.hide-for-touch {
 body {
   -webkit-transition: opacity 0.25s ease;
           transition: opacity 0.25s ease; }
+
+/**
+ * TWEAKS FOUNDATION OFF CANVAS MENU
+ */
+.off-canvas-wrap, .inner-wrap {
+  min-height: 100%; }
+
+.off-canvas-wrap {
+  height: 100%;
+  overflow-y: auto; }
