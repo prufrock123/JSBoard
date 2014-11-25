@@ -7,6 +7,7 @@ var sass = require('gulp-sass');
 
 var css = ["./*.css", "./css/*.css"];
 var scss = ["./*.scss", "./scss/*.scss"];
+var scss_watch = ["./*.scss", "./scss/*.scss", "./bower_components/foundation/scss/*.scss", "./bower_components/foundation/scss/foundation/_settings.scss"];
 var js = ["./*.js", "./js/*.js"];
 
 function prefix() {
@@ -37,7 +38,7 @@ gulp.task('sass', sassify);
 gulp.task('watch', function() {
     gulp.watch(css, ['prefix']);
     gulp.watch(js, ['lint']);
-    gulp.watch(scss, ['sass']);
+    gulp.watch(scss_watch, ['sass']);
 
     gulp.start("prefix");
     gulp.start("sass");
