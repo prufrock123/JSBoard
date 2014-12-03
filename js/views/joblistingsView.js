@@ -5,10 +5,12 @@
 	var JobListingsView = Backbone.View.extend({
 		tagname: "div",
 		id: "container",
+		className: "jobListings",
 		// el: document.querySelector("#container"),
 		// className: "jobListings",
 		render: function(){
 			var self = this;
+			this.el.innerHTML = "";
 			this.collection.forEach(function(model){
 				var subview = new app.JobListingView({model: model});
 				self.$el.append(subview.el);

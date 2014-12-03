@@ -5530,6 +5530,15 @@ th.hide-for-touch {
     display: table-cell !important; } }
 
 /**
+ * HIDING PAGE 1 & 2
+ */
+.joblistings, .jobListing, .jobListingExpanded, .jobPostForm {
+  display: none; }
+
+.active, .active > * {
+  display: block; }
+
+/**
  * BOX-SIZING
  */
 *, *:before, *:after {

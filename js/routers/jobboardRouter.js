@@ -4,10 +4,39 @@
 
 	var JobBoardRouter = Backbone.Router.extend({
 		routes: {
-			"*default": "page1"
+			"joblisting/:id": "page2",
+			"#post": "page3",
+			"*anythingelse": "page1"
 		},
 		page1: function(){
 			this.joblistingsview.render();
+
+			this.joblistingexpandedview.el.classList.remove('active');
+			this.joblistingsview.el.classList.add('active');
+		},
+		page2: function(id){
+			// debugger;
+			// console.dir(this);
+			var joblistingmodel = this.joblistings.filter(function(model){
+				return model.cid === id;
+			});
+
+			if(!joblistingmodel.length){
+				window.location.hash = "#";
+				return;
+			}
+
+			joblistingmodel = joblistingmodel[0];
+
+			this.joblistingexpandedview.render(
+				joblistingmodel
+			);
+
+			this.joblistingsview.el.classList.remove('active');
+			this.joblistingexpandedview.el.classList.add('active');
+		},
+		page3: function(){
+
 		},
 		initialize: function(){
 			// app view
@@ -29,6 +58,14 @@
 				collection: this.joblistings
 			});
 			this.appview.$el.find(".container").append(this.joblistingsview.el);
+
+			// append a JobListingExpandedView
+			this.joblistingexpandedview = new app.JobListingExpandedView();
+			this.appview.$el.find(".container").append(this.joblistingexpandedview.el);
+
+			// append a JobPostFormView
+			this.jobpostformview = new app.JobPostFormView();
+			this.appview.$el.find(".container").append(this.jobpostformview.el);
 
 			Backbone.history.start();
 		}
