@@ -19,7 +19,8 @@ function app(){
         {url: "./js/views/joblistingsView.js"},
         {url: "./js/views/joblistingView.js"},
         {url: "./js/views/joblistingexpandedView.js"},
-        {url: ".js/views/jobpostformView.js"},
+        {url: "./js/views/jobpostformView.js"},
+        {url: "./templates/jobPostForm.html"},
         {url: "./dist/style.css"}
     ).then(function(){
         _.templateSettings.interpolate = /{([\s\S]+?)}/g;
