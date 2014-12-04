@@ -4,8 +4,8 @@
 
 	var JobBoardRouter = Backbone.Router.extend({
 		routes: {
-			"joblisting/:id": "page2",
 			"post": "page3",
+			"joblisting/:id": "page2",
 			"*defaults": "page1"
 		},
 		page1: function(){
@@ -36,11 +36,10 @@
 			this.joblistingexpandedview.el.classList.add('active');
 		},
 		page3: function(){
-			this.jobpostformview.render();
 			this.joblistingsview.el.classList.remove('active');
 			this.joblistingexpandedview.el.classList.remove('active');
-			this.jobpostformview.el.classList.add('active');
-
+			this.jobpostformview.el.classList.add('active');			
+			this.jobpostformview.render();
 		},
 		initialize: function(){
 			// app view
