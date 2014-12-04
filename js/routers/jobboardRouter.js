@@ -36,6 +36,7 @@
 			this.joblistingexpandedview.el.classList.add('active');
 		},
 		page3: function(){
+			
 			this.joblistingsview.el.classList.remove('active');
 			this.joblistingexpandedview.el.classList.remove('active');
 			this.jobpostformview.el.classList.add('active');			
