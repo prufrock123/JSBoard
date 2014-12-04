@@ -9,7 +9,7 @@
 			"*defaults": "page1"
 		},
 		page1: function(){
-			this.joblistingsview.render();
+			// this.joblistingsview.render();
 
 			this.joblistingexpandedview.el.classList.remove('active');
 			this.joblistingsview.el.classList.add('active');
@@ -47,14 +47,17 @@
 			this.appview = new app.AppView();
 
 			// data
-			this.joblistings = new app.JobListings([
-				{ jobTitle: "Developer", type: "full-time" },
-				{ jobTitle: "Developer", type: "part-time" },
-				{ jobTitle: "Developer", type: "full-time" },
-				{ jobTitle: "Developer", type: "contract" },
-				{ jobTitle: "Developer", type: "full-time" },
-				{ jobTitle: "Developer", type: "full-time" }
-			]);
+			this.joblistings = new app.JobListings()
+			// this.joblistings.add([
+			// 	{ jobTitle: "Developer", type: "full-time" },
+			// 	{ jobTitle: "Developer", type: "part-time" },
+			// 	{ jobTitle: "Developer", type: "full-time" },
+			// 	{ jobTitle: "Developer", type: "contract" },
+			// 	{ jobTitle: "Developer", type: "full-time" },
+			// 	{ jobTitle: "Developer", type: "full-time" }
+			// ]);
+
+			// this.
 			console.dir(this.joblistings)
 
 			// append a JobListingsView only ONCE
@@ -68,7 +71,7 @@
 			this.appview.$el.find(".container").append(this.joblistingexpandedview.el);
 
 			// append a JobPostFormView
-			this.jobpostformview = new app.JobPostFormView();
+			this.jobpostformview = new app.JobPostFormView({collection: this.joblistings});
 			this.appview.$el.find(".container").append(this.jobpostformview.el);
 
 			Backbone.history.start();

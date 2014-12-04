@@ -11,6 +11,7 @@ function app(){
         {url: "./bower_components/lodash/dist/lodash.min.js"},
         {url: "./bower_components/backbone/backbone.js"},
         {url: "./bower_components/backbonefire/dist/backbonefire.js"},
+        {url: "./bower_components/firebase/firebase.js"},
         {url: "./bower_components/foundation/js/foundation.js"},
         {url: "./bower_components/foundation/js/foundation/foundation.offcanvas.js"},
         {url: "./js/models/jobListing.js"},

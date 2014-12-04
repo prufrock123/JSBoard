@@ -11,6 +11,7 @@
 		render: function(){
 			var self = this;
 			this.el.innerHTML = "";
+			console.dir(this.collection);
 			this.collection.forEach(function(model){
 				var subview = new app.JobListingView({model: model});
 				self.$el.append(subview.el);
@@ -25,6 +26,7 @@
 			this.render(fullTimeJobs);
 		},
 		initialize: function(){
+			this.listenTo(this.collection, "sync", this.render)
 		}
 	});
 
