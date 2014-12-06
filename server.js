@@ -11,6 +11,23 @@ function startServer() {
         request = require('request'),
         _ = require('lodash');
 
+    /*-----------------------*/
+    /**
+     * LOAD STRIPE STUFF
+     */
+    var chargesRef = new Firebase("https://jsjoboard.firebaseio.com/charges");
+
+    var stripeData = {
+        stripeKey: process.env.stripeKey
+    };
+    if(!stripeData.stripeKey){
+        stripeData = require("./stuff.js").data;
+    };
+
+    var stripeFire = require("./node_modules/stripe-fire")(stripeData.stripeKey)
+
+    /*-----------------------*/
+
     function querify(queryParamsObject){
         return '?'+_.map(queryParamsObject || {}, function(val, key){
             return key+'='+val
