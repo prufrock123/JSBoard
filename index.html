@@ -11,17 +11,39 @@
 
 <body style="opacity: 0;">
 
-<form action="https://jsjoboard.firebaseio.com.toJSON" method="POST">
+  <script src="https://checkout.stripe.com/checkout.js"></script>
 
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_cS222704wqEfzHQpnhWvoiOE"
-    data-amount="2000"
-    data-name="Demo Site"
-    data-description="2 widgets ($20.00)"
-    data-image="/128x128.png">
+  <button id="customButton">Purchase</button>
+
+  <script>
+    var handler = StripeCheckout.configure({
+      key: 'pk_test_cS222704wqEfzHQpnhWvoiOE',
+      image: '/128x128.png',
+      token: function(token) {
+        var chargesRef = new Firebase("https://jsjoboard.firebaseio.com/charges");
+        chargesRef.push({
+          amount: 2000,
+          currency: "usd",
+          token: token.id
+        });
+      }
+    });
+
+    $('#customButton').on('click', function(e) {
+      // Open Checkout with further options
+      handler.open({
+        name: 'Demo Site',
+        description: '2 widgets ($20.00)',
+        amount: 2000
+      });
+      e.preventDefault();
+    });
+
+    // Close Checkout on page navigation
+    $(window).on('popstate', function() {
+      handler.close();
+    });
   </script>
-</form>
 
 
     <div class="off-canvas-wrap" data-offcanvas>

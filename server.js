@@ -24,7 +24,8 @@ function startServer() {
         stripeData = require("./stuff.js").data;
     };
 
-    var stripeFire = require("./node_modules/stripe-fire")(stripeData.stripeKey)
+    var stripeFire = require("./node_modules/stripe-fire")(stripeData.stripeKey);
+    stripeFire.charges(chargesRef);
 
     /*-----------------------*/
 
