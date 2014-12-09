@@ -58,7 +58,7 @@
 			// ]);
 
 			// this.
-			console.dir(this.joblistings)
+			// console.dir(this.joblistings)
 
 			// append a JobListingsView only ONCE
 			this.joblistingsview = new app.JobListingsView({

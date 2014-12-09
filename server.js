@@ -9,14 +9,17 @@ function startServer() {
         app = express(),
         methodOverride = require('method-override'),
         request = require('request'),
+        Firebase = require('firebase'),
         _ = require('lodash');
 
     /*-----------------------*/
     /**
      * LOAD STRIPE STUFF
      */
-    var chargesRef = new Firebase("https://jsjoboard.firebaseio.com/charges");
+    // var chargesRef = new Firebase("https://jsjoboard.firebaseio.com/charges");
+    var chargesRef = "https://jsjoboard.firebaseio.com/charges";
 
+    // Load Stripe keys
     var stripeData = {
         stripeKey: process.env.stripeKey
     };
@@ -25,6 +28,14 @@ function startServer() {
     };
 
     var stripeFire = require("./node_modules/stripe-fire")(stripeData.stripeKey)
+    // var charges = stripeFire.charges(chargesRef);
+    // console.log(chargesRef)
+    stripeFire.charges(chargesRef);
+    // var charges = stripeFire.charges(chargesRef, function(err, charge) {
+    //     // Called after a create/update charge request is sent to Stripe
+    //     console.log(charge);
+    //     console.log(err);
+    // });
 
     /*-----------------------*/
 

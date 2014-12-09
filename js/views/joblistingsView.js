@@ -11,7 +11,7 @@
 		render: function(){
 			var self = this;
 			this.el.innerHTML = "";
-			console.dir(this.collection);
+			// console.dir(this.collection);
 			this.collection.forEach(function(model){
 				var subview = new app.JobListingView({model: model});
 				self.$el.append(subview.el);

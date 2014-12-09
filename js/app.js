@@ -23,6 +23,8 @@ function app(){
         {url: "./js/views/joblistingexpandedView.js"},
         {url: "./js/views/jobpostformView.js"},
         {url: "./templates/jobPostForm.html"},
+        {url: "//checkout.stripe.com/checkout.js"},
+        {url: "./js/stripeCheckout.js"},
         {url: "./dist/style.css"}
     ).then(function(){
         _.templateSettings.interpolate = /{([\s\S]+?)}/g;

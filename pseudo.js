@@ -17,8 +17,6 @@ create a charge
 
 
 
-
-
 var charges = stripeFire.charges("https://stripe-fire.firebaseio.com/charges", function(err, charge) {
     // Called after a create/update charge request is sent to Stripe
 }, "ACCESS_TOKEN", function(chargeData) {
@@ -36,6 +34,8 @@ chargesRef.push({
     currency: "usd",
     card: "token"
 });
+
+
 
 
 
