@@ -15,11 +15,11 @@
  * HIDING PAGE 1 & 2
  */
 
-.joblistings, .jobListing, .jobListingExpanded, .jobPostForm, .registrationForm {
+.jobListings, .jobListing, .jobListingExpanded, .jobPostForm, .registrationForm {
     display: none;
 }
 
-.active, .active > * {
+.activeCustom, .activeCustom > * {
     display: block;
 }
 

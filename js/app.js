@@ -54,6 +54,9 @@ function app(){
         document.body.style.opacity = 1;
         $(document).foundation();
         var router = new app.JobBoardRouter();
+
+        // login/logout stuff
+        
         
     });
 

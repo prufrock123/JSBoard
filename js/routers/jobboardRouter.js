@@ -4,18 +4,19 @@
 
 	var JobBoardRouter = Backbone.Router.extend({
 		routes: {
+			"filtered": "page5",
 			"users": "page4",
 			"post": "page3",
 			"joblisting/:id": "page2",
 			"*defaults": "page1"
 		},
 		page1: function(){
-			// this.joblistingsview.render();
+			this.joblistingsview.render();
 			
-			this.joblistingsview.el.classList.add('active');
-			this.joblistingexpandedview.el.classList.remove('active');
-			this.jobpostformview.el.classList.remove('active');
-			this.registrationformview.el.classList.remove('active');	
+			this.joblistingsview.el.classList.add('activeCustom');
+			this.joblistingexpandedview.el.classList.remove('activeCustom');
+			this.jobpostformview.el.classList.remove('activeCustom');
+			this.registrationformview.el.classList.remove('activeCustom');	
 		},
 		page2: function(id){
 			// debugger;
@@ -35,10 +36,10 @@
 				joblistingmodel
 			);
 
-			this.joblistingsview.el.classList.remove('active');
-			this.joblistingexpandedview.el.classList.add('active');
-			this.jobpostformview.el.classList.remove('active');
-			this.registrationformview.el.classList.remove('active');	
+			this.joblistingsview.el.classList.remove('activeCustom');
+			this.joblistingexpandedview.el.classList.add('activeCustom');
+			this.jobpostformview.el.classList.remove('activeCustom');
+			this.registrationformview.el.classList.remove('activeCustom');	
 		},
 		page3: function(){
 
@@ -48,18 +49,24 @@
 				return;
 			}
 
-			this.joblistingsview.el.classList.remove('active');
-			this.joblistingexpandedview.el.classList.remove('active');
-			this.jobpostformview.el.classList.add('active');
-			this.registrationformview.el.classList.remove('active');			
+			this.joblistingsview.el.classList.remove('activeCustom');
+			this.joblistingexpandedview.el.classList.remove('activeCustom');
+			this.jobpostformview.el.classList.add('activeCustom');
+			this.registrationformview.el.classList.remove('activeCustom');			
 			this.jobpostformview.render();
 		},
 		page4: function(){
-			this.joblistingsview.el.classList.remove('active');
-			this.joblistingexpandedview.el.classList.remove('active');
-			this.jobpostformview.el.classList.remove('active');
-			this.registrationformview.el.classList.add('active');			
+			this.joblistingsview.el.classList.remove('activeCustom');
+			this.joblistingexpandedview.el.classList.remove('activeCustom');
+			this.jobpostformview.el.classList.remove('activeCustom');
+			this.registrationformview.el.classList.add('activeCustom');			
 			this.registrationformview.render();
+		},
+		page5: function(){
+			this.joblistingsview.el.classList.add('activeCustom');
+			this.joblistingexpandedview.el.classList.remove('activeCustom');
+			this.jobpostformview.el.classList.remove('activeCustom');
+			this.registrationformview.el.classList.remove('activeCustom');			
 		},
 		initialize: function(){
 			// app view

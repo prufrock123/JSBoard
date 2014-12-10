@@ -12,6 +12,7 @@
 			$.get("./templates/" + this.template + ".html").then(function(templateString){
 				self.el.innerHTML = templateString;
 			})
+			// debugger;
 		},
 		events: {
 			"submit form": "addJob"
