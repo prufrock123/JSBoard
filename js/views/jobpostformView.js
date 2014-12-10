@@ -16,6 +16,9 @@
 		events: {
 			"submit form": "addJob"
 		},
+		processPayment: {
+			
+		},
 		addJob: function(event){
 			event.preventDefault();
 			// debugger;

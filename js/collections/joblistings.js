@@ -14,7 +14,7 @@
 
 	var JobListings = Backbone.Firebase.Collection.extend({
 		model: app.JobListing,
-		url: 'https://jsjoboard.firebaseio.com/'
+		url: 'https://jsjoboard.firebaseio.com/jobs'
 	})
 
 	app.JobListings = JobListings;

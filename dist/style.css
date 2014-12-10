@@ -5532,7 +5532,7 @@ th.hide-for-touch {
 /**
  * HIDING PAGE 1 & 2
  */
-.joblistings, .jobListing, .jobListingExpanded, .jobPostForm {
+.joblistings, .jobListing, .jobListingExpanded, .jobPostForm, .registrationForm {
   display: none; }
 
 .active, .active > * {
