@@ -12,42 +12,24 @@
 
 <body style="opacity: 0;">
 
-<div class="icon-bar three-up">
-  <a href="#" class="item">
-    <i class="fi-home"></i>
-    <label>Home</label>
-  </a>
-  <a href="#post" class="item">
-    <i class="fi-bookmark"></i>
-    <label>Post a job</label>
-  </a>
-  <a href="#users" class="item">
-    <i class="fi-info"></i>
-    <label>Login/Register</label>
-  </a>
+
+<div data-interchange="[./templates/mobile-nav.html, (small)], [./templates/browser-nav.html, (medium)]">
+  <div data-alert class="alert-box secondary radius">
+    This is the default content.
+    <a href="#" class="close">&times;</a>
+  </div>
 </div>
 
-<!-- <form action="https://jsjoboard.firebaseio.com.toJSON" method="POST">
 
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_cS222704wqEfzHQpnhWvoiOE"
-    data-amount="2000"
-    data-name="Demo Site"
-    data-description="2 widgets ($20.00)"
-    data-image="/128x128.png">
-  </script>
-</form> -->
 
-   <!-- <script src="https://checkout.stripe.com/checkout.js"></script> -->
+    <!-- <button id="customButton">Purchase</button> -->
 
-  <button id="customButton">Purchase</button>
-
-            <section class="main-section">
-                <div class="container row"></div>
-            </section>
+    <section class="main-section">
+        <div class="container"></div>
+    </section>
 
     <script type="text/javascript" src="./bower_components/Loader/loader.js" id="loaderjs" data-app="./js/app.js"></script>
+
 
 </body>
 

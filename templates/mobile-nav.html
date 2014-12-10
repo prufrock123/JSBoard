@@ -1,0 +1,44 @@
+<nav id="mobile-nav" class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="#">My Site</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a id="mobileMenu" href="#"><span>Menu</span></a>
+        </li>
+    </ul>
+
+    <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li>
+                <a href="#" class="item">
+                    <i class="fi-home"></i>
+                    <label>Home</label>
+                </a>
+            </li>
+            <li>
+                <a href="#post" class="item">
+                    <i class="fi-bookmark"></i>
+                    <label>Post a job</label>
+                </a>
+            </li>
+            <li>
+                <a href="#users" class="item">
+                    <i class="fi-info"></i>
+                    <label>Login/Register</label>
+                </a>
+            </li>
+        </ul>
+
+    </section>
+</nav>
+
+<script type="text/javascript">
+// debugger;
+$(document).ready(function() {
+    $('#mobileMenu').click(function() {
+        $('#mobile-nav').toggleClass('expanded');
+    })
+});
+</script>
