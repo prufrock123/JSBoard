@@ -6,7 +6,8 @@
 		defaults: {
 			"jobTitle": "Not given",
 			"type": "Not given",
-			"aboutUs": "Not given"
+			"aboutUs": "Not given",
+			"email": "Not given"
 		},
 		validate: function(attrs){
 			if(!attrs.jobTitle){

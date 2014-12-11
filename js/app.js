@@ -8,14 +8,19 @@ function app(){
     // load some scripts (uses promises :D)
     loader.load(
 
+        // Styles
+        {url: "./bower_components/normalize.css/normalize.css"},
+        {url: "./bower_components/typeplate-starter-kit/css/typeplate.css"},
+        {url: "./dist/style.css"},
+        {url: "./dist/foundation-icons/foundation-icons.css"},
+        // {url: '//fonts.googleapis.com/css?family=Poiret+One'},
+
         // Dependencies
         {url: "./bower_components/jquery/dist/jquery.min.js"},
         {url: "./bower_components/lodash/dist/lodash.min.js"},
         {url: "./bower_components/backbone/backbone.js"},
         {url: "./bower_components/backbonefire/dist/backbonefire.js"},
         {url: "./bower_components/firebase/firebase.js"},
-        {url: "./bower_components/foundation/js/foundation.js"},
-        {url: "./bower_components/foundation/js/foundation/foundation.offcanvas.js"},
 
         // Models
         {url: "./js/models/jobListing.js"},
@@ -46,8 +51,9 @@ function app(){
         {url: "./js/stripeCheckout.js"},
         {url: "./js/utilities/Auth.js"},
 
-        // Styles
-        {url: "./dist/style.css"}
+        // foundation js
+        {url: "./bower_components/foundation/js/foundation.js"},
+        {url: "./bower_components/foundation/js/foundation/foundation.offcanvas.js"}
         // {url: "./css/foundation-icons.css"}
     ).then(function(){
 
