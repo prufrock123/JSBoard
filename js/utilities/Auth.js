@@ -6,8 +6,8 @@
         this.ref = new Firebase(firebaseUrl || "https://jsjoboard.firebaseio.com/");
         var self = this;
 
-        this.onAuth = $.Deferred();
         this.ref.onAuth(function(authData) {
+            self.onAuth = $.Deferred();
             if (authData) {
                 self.onAuth.resolve(authData);
                 self.authData = authData;
@@ -49,6 +49,9 @@
                 }
             })
             return promise;
+        },
+        logout: function(data){
+            this.ref.unauth();
         },
         isLoggedIn: function() {
         	return !!this.authData;

@@ -22,7 +22,13 @@
                 return jobListing.get("type") === jobType;
             });
             return filtered
-        }
+        },
+        byUid: function(uid) {
+            var filtered = this.filter(function(jobListing) {
+                return jobListing.get("uid") === uid;
+            });
+            return filtered
+        },
 
     });
 

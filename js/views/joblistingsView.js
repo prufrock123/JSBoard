@@ -11,9 +11,10 @@
 		// className: "jobListings",
 		render: function(){
 			var self = this;
+
 			// debugger;
+
 			this.el.innerHTML = "";
-			// console.dir(this.collection);
 			$.get("./templates/" + this.template + ".html").then(function(templateString){
 				self.el.innerHTML = templateString
 			}).done(function(){
@@ -22,6 +23,38 @@
 					self.$el.append(subview.el);
 				})
 			})
+			// var status = app.auth.onAuth;
+			// // console.dir(this.collection);
+			// status.fail(function(){
+			// 	$.get("./templates/" + this.template + ".html").then(function(templateString){
+			// 		self.el.innerHTML = templateString
+			// 	}).done(function(){
+			// 		self.collection.forEach(function(model){
+			// 			var subview = new app.JobListingView({model: model});
+			// 			self.$el.append(subview.el);
+			// 		})
+			// 	})
+			// });
+			// status.done(function(authData){
+			// 	this.filterProfile(authData)
+			// });
+			// 			var status = app.auth.onAuth;
+			// console.dir(this.collection);
+			// if(!this.collection){
+			// 	$.get("./templates/" + this.template + ".html").then(function(templateString){
+			// 		self.el.innerHTML = templateString
+			// 	}).done(function(){
+			// 		self.collection.forEach(function(model){
+			// 			var subview = new app.JobListingView({model: model});
+			// 			self.$el.append(subview.el);
+			// 		})
+			// 	})
+			// } else {	
+			// 	var status = app.auth.onAuth;	
+			// 	status.done(function(authData){
+			// 		this.filterProfile(authData)
+			// 	});
+			// }
 
 		},
 		renderFiltered: function(filtered){
@@ -46,7 +79,11 @@
 			var filteredCollection = this.collection.byType(event.target.id)
 			this.renderFiltered(filteredCollection);
 		},
-		initialize: function(){
+		// filterProfile: function(authData){
+		// 	var filteredCollection = this.collection.byUid(authData.uid)
+		// 	this.renderFiltered(filteredCollection);
+		// },
+		initialize: function(options){
 			this.listenTo(this.collection, "sync", this.render)
 		}
 	});

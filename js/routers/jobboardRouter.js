@@ -77,6 +77,7 @@
 
 			// data
 			this.joblistings = new app.JobListings()
+
 			// this.joblistings.add([
 			// 	{ jobTitle: "Developer", type: "full-time" },
 			// 	{ jobTitle: "Developer", type: "part-time" },
@@ -104,7 +105,7 @@
 			this.appview.$el.find(".container").append(this.jobpostformview.el);
 
 			// append a RegistrationFormView
-			this.registrationformview = new app.RegistrationFormView({collection: this.users});
+			this.registrationformview = new app.RegistrationFormView({collection: this.joblistings});
 			// this.registrationformview = new app.RegistrationFormView({model: this.user});
 			this.appview.$el.find(".container").append(this.registrationformview.el);
 

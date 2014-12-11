@@ -35,6 +35,7 @@ function app(){
         {url: "./js/views/joblistingexpandedView.js"},
         {url: "./js/views/jobpostformView.js"},
         {url: "./js/views/registrationformView.js"},
+        {url: "./js/views/profileView.js"},
 
         // Templates
         {url: "./templates/jobPostForm.html"},

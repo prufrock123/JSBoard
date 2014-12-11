@@ -15,18 +15,31 @@
 			// debugger;
 		},
 		events: {
-			"submit form": "addJob"
+			"click #jobPostSubmit": "addJob"
 		},
 		processPayment: {
 			
 		},
 		addJob: function(event){
 			event.preventDefault();
+			var self = this;
 			// debugger;
 			var arr = this.$el.find('input').serializeArray();
 			var obj = this.createObject(arr)
 
-			this.collection.create(obj);
+			var status = app.auth.onAuth;
+
+			status.done(function(authData){
+				obj.uid = authData.uid;
+			});
+
+
+
+			this.collection.create(obj)
+
+			
+				window.location.hash = "#";
+			
 		},
 		createObject: function(array){
 			var object = {};
