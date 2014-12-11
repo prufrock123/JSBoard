@@ -7,10 +7,12 @@
 		// id: "container",
 		className: "profileView",
 		render: function(){
+			// debugger;
 			var self = this;
 
 			var status = app.auth.onAuth;	
 			status.done(function(authData){
+				console.dir(authData)
 				self.filterProfile(authData)
 			});
 	
@@ -40,7 +42,10 @@
 			this.renderFiltered(filteredCollection);
 		},
 		initialize: function(){
+			// debugger;
+			// WHY DIDN'T LINE 47 BELOW WORK???
 			this.listenTo(this.collection, "sync", this.render)
+			this.render();
 		}
 	});
 
