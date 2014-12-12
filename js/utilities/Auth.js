@@ -20,7 +20,6 @@
 
     Auth.prototype = {
         createUser: function(data) {
-
             var promise = $.Deferred();
 
             this.ref.createUser({

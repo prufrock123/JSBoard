@@ -87,7 +87,7 @@
 					.then(function(authData){
 						// logged in successfully, go to "post a job"
 						window.location.hash = "#post";
-						debugger;
+						// debugger;
 						self.render();
 					}).fail(function(errorMessage){
 						// wrong password or login doesn't exist
@@ -113,7 +113,7 @@
 
 			status.done(function(authData){
 				app.auth.logout();
-				debugger;
+				// debugger;
 				self.render();
 			})
 
