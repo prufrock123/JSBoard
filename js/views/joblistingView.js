@@ -4,7 +4,7 @@
 	var JobListingView = Backbone.View.extend({
 		tagName: "a",
 		className: "row jobListing",
-		template: "<div class='small-12 columns'><h2>{jobTitle}</h2><h4>{type}</h4><p>consectetur adipiscing elit et dolore magna aliqua.</p></div><hr/>",
+		template: "<div class='small-1 columns'><i class='fi-arrow-right size-36'></i></div><div class='small-11 columns'><h2>{jobTitle}</h2><h4>{type}</h4><p>{email}</p></div><hr/>",
 		initialize: function(){
 			this.render();
 		},
